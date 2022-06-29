@@ -1,9 +1,9 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-const Index = ({breads}) => {
+const Index = ({breads, title}) => {
     return (
-        <Default>
+        <Default title>
             <h2>Index Page</h2>
             {/* <p>I have {breads[0].name} bread!</p> */}
             {/* This is a JSX comment. */}

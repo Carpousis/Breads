@@ -7,7 +7,8 @@ const breads = express.Router()
 breads.get('/', (_req, res) => {
     res.render('index',
         {
-        breads: bread
+        breads: bread,
+        title: 'Index Page'
 
     })
     //res.send(bread)
@@ -17,7 +18,13 @@ breads.get('/', (_req, res) => {
 
 //SHOW 
 breads.get('/:arrayIndex', (req, res) => {
-    res.send(bread[req.params.arrayIndex])
+    if (bread[req.params.arrayIndex]) {
+    res.render('Show', {
+        bread: bread[req.params.arrayIndex]
+        })
+    } else {
+        res.send('404')
+    }
 })
 
 module.exports = breads
